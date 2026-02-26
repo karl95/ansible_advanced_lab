@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ app_name }}</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background: #f4f6f8;
+padding: 40px;
+}
+.container {
+background: white;
+padding: 30px;
+border-radius: 8px;
+max-width: 600px;
+margin: auto;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.debug {
+margin-top: 20px;
+padding: 15px;
+background: #eef;
+border-left: 4px solid #667eea;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>{{ app_name }}</h1>
+
+<p><strong>Server:</strong> {{ server_name }}</p>
+<p><strong>Environment:</strong> {{ app_environment }}</p>
+
+{% if debug_mode %}
+<div class="debug">
+<h3>Debug info</h3>
+<p><strong>Hostname:</strong> {{ ansible_hostname }}</p>
+<p><strong>Distribution:</strong> {{ ansible_distribution }}</p>
+</div>
+{% endif %}
+</div>
+
+</body>
+</html>
